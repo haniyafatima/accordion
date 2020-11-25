@@ -1,0 +1,170 @@
+body{
+text-align: center;
+color: #7e7474;
+background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+height: 100vh;
+/* display: flex; */
+}
+
+h1{
+  color: hsl(238, 29%, 16%);
+  font-size: 34px;
+  text-align: left;
+}
+
+p{
+font-size: 12px;
+padding-bottom: 0px;
+margin-bottom: 4px;
+display: inline-block;
+margin: 0 0.1rem 1rem;
+}
+
+.container{
+  background-color: white;
+margin-top: 80px;
+padding: 40px;
+width: 900px;
+/* height: 500px; */
+border-radius: 20px;
+background-image: url(images/bg-pattern-desktop.svg);
+background-repeat: no-repeat;
+box-shadow: 0 20px 30px 5px rgba(0, 0, 0, 0.2);
+background-position: -36rem -18rem;
+display: grid;
+grid-template-columns: auto auto;
+
+}
+
+/* Images Section  */
+
+
+.arrow{
+  text-align: right;
+}
+
+.woman-desktop{
+  width: 430px;
+  position: relative;
+  right: 100px;
+  top: 40px;
+}
+.woman-mobile{
+  display: none;
+}
+
+.box{
+  position: absolute;
+  top: 170px;
+  right: 360px;
+  width: 150px;
+}
+
+.shadow{
+  height: 500px;
+  width: 500px;
+  position: relative;
+  bottom: 400px;
+}
+
+/* FAQ Section */
+
+.faq-section{
+  text-align: left;
+padding: 40px;
+
+}
+.accordion::after{
+  content: url("images/icon-arrow-down.svg");
+  float: right;
+}
+.active::after{
+transform: rotate(540deg);
+}
+button.accordion.active{
+  font-weight: bolder;
+  border: none;
+  outline: none;
+
+}
+
+.accordion{
+  background-color: white;
+  color: hsl(240, 6%, 50%);
+  border: none;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  padding: 13px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 14px;
+  width: 22rem;
+
+}
+.accordion:hover{
+  color: hsl(14, 88%, 65%);
+}
+.panel{
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  text-align: left;
+  padding-top: 10px;
+  font-family: 'Kumbh Sans', sans-serif;
+  line-height: 1.5;
+  width: 22rem;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+
+}
+
+
+/* Media Query */
+@media (max-width: 1028px) {
+body{
+  /* text-align: center; */
+  margin: 40px;
+  padding: 5rem 1rem 3rem;
+}
+
+.container{
+height: 500px;
+width: 400px;
+padding: 20px;
+box-shadow: none;
+border-radius: 25px;
+display: flex;
+flex-direction: column;
+background-image: url(images/bg-pattern-mobile.svg);
+background-position: top;
+margin: 2rem auto;
+}
+.woman-desktop{
+  display: none;
+}
+.box{
+  display: none
+}
+.woman-mobile{
+display: inline;
+position: relative;
+right: 10px;
+bottom: 125px;
+padding-bottom: -20px;
+
+}
+
+h1{
+text-align: center;
+}
+.faq-section{
+  padding-top: 0px;
+}
+.image-section{
+  padding-bottom: 10px;
+}
+.accordion{
+  padding-top: 5px;
+}
+}
