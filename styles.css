@@ -1,66 +1,62 @@
-body{
-text-align: center;
-color: #7e7474;
-background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-height: 100vh;
-/* display: flex; */
+body {
+  text-align: center;
+  color: #7e7474;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  height: 100vh;
+  /* display: flex; */
 }
 
-h1{
+h1 {
   color: hsl(238, 29%, 16%);
-  font-size: 34px;
   text-align: left;
 }
 
-p{
-font-size: 12px;
-padding-bottom: 0px;
-margin-bottom: 4px;
-display: inline-block;
-margin: 0 0.1rem 1rem;
+p {
+  color: hsl(240, 6%, 50%);
+  font-size: 12px;
+  padding-bottom: 0px;
+  margin-bottom: 4px;
+  display: inline-block;
+  margin: 0 0.1rem 1rem;
 }
 
-.container{
+.container {
   background-color: white;
-margin-top: 80px;
-padding: 40px;
-width: 900px;
-/* height: 500px; */
-border-radius: 20px;
-background-image: url(images/bg-pattern-desktop.svg);
-background-repeat: no-repeat;
-box-shadow: 0 20px 30px 5px rgba(0, 0, 0, 0.2);
-background-position: -36rem -18rem;
-display: grid;
-grid-template-columns: auto auto;
-
+  margin-top: 80px;
+  padding: 40px;
+  width: 900px;
+  height: 500px;
+  border-radius: 20px;
+  background-image: url(images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  box-shadow: 0 20px 30px 5px rgba(0, 0, 0, 0.2);
+  background-position: -36rem -18rem;
 }
 
 /* Images Section  */
-
-
-.arrow{
+.arrow {
   text-align: right;
 }
 
-.woman-desktop{
+.woman-desktop {
   width: 430px;
   position: relative;
   right: 100px;
   top: 40px;
 }
-.woman-mobile{
+
+.woman-mobile {
   display: none;
 }
 
-.box{
+.box {
   position: absolute;
   top: 170px;
   right: 360px;
   width: 150px;
 }
 
-.shadow{
+.shadow {
   height: 500px;
   width: 500px;
   position: relative;
@@ -68,45 +64,54 @@ grid-template-columns: auto auto;
 }
 
 /* FAQ Section */
-
-.faq-section{
+.faq-section {
   text-align: left;
-padding: 40px;
-
+  padding: 40px;
 }
-.accordion::after{
+
+.accordion::after {
   content: url("images/icon-arrow-down.svg");
   float: right;
 }
-.active::after{
-transform: rotate(540deg);
+
+.active::after {
+  transform: rotate(540deg);
 }
-button.accordion.active{
-  font-weight: bolder;
-  border: none;
+
+button {
+  padding-left: 0px;
   outline: none;
-
+  border: none;
 }
 
-.accordion{
-  background-color: white;
+button.accordion.active {
+  border-bottom: none;
+  font-weight: 600;
+}
+
+.accordion {
+  background-color: #fff;
   color: hsl(240, 6%, 50%);
-  border: none;
   border-bottom: 1px solid hsl(240, 5%, 91%);
-  padding: 13px;
-  width: 100%;
+  padding: 13px 13px 13px 0px;
   text-align: left;
   outline: none;
   transition: 0.4s;
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 14px;
   width: 22rem;
+}
 
+.accordion:focus{
+  outline: 0;
 }
-.accordion:hover{
+
+.accordion:hover {
   color: hsl(14, 88%, 65%);
+  cursor: pointer;
 }
-.panel{
+
+.panel {
   background-color: white;
   display: none;
   overflow: hidden;
@@ -116,55 +121,95 @@ button.accordion.active{
   line-height: 1.5;
   width: 22rem;
   border-bottom: 1px solid hsl(240, 5%, 91%);
-
 }
-
-
 /* Media Query */
-@media (max-width: 1028px) {
-body{
-  /* text-align: center; */
-  margin: 40px;
-  padding: 5rem 1rem 3rem;
+
+
+@media (max-width: 1000px) {
+  .accordion {
+    padding: 13px 13px 13px 0px;
+    width: 20rem;
+  }
+
+  p {
+    width: 20rem;
+  }
+
+  .panel {
+    width: 20rem;
+  }
 }
 
-.container{
-height: 500px;
-width: 400px;
-padding: 20px;
-box-shadow: none;
-border-radius: 25px;
-display: flex;
-flex-direction: column;
-background-image: url(images/bg-pattern-mobile.svg);
-background-position: top;
-margin: 2rem auto;
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 40px 30px 40px 30px;
+  }
+
+  .container {
+    height: 600px;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+    box-shadow: none;
+    border-radius: 25px;
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-position: top;
+    margin: auto;
+  }
+
+  .woman-desktop {
+    display: none;
+  }
+
+  .box {
+    display: none
+  }
+
+  .woman-mobile {
+    display: inline-block;
+    position: absolute;
+    bottom: 460px;
+    left: 320px;
+    z-index: 2;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .faq-section {
+    margin: 150px auto 0px auto;
+    text-align: center;
+    padding: 0px;
+  }
+
+  .panel {
+    background-color: white;
+    text-align: left;
+    padding-top: 0px;
+    line-height: 1.5;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
-.woman-desktop{
-  display: none;
-}
-.box{
-  display: none
-}
+
+@media (max-width: 600px) {
+
 .woman-mobile{
-display: inline;
-position: relative;
-right: 10px;
-bottom: 125px;
-padding-bottom: -20px;
-
+top: -55px;
+left: 150px;
 }
 
-h1{
-text-align: center;
-}
-.faq-section{
-  padding-top: 0px;
-}
-.image-section{
-  padding-bottom: 10px;
-}
 .accordion{
-  padding-top: 5px;
+  width:90%;
 }
+
+p,.panel{
+  width: 90%;
+  text-align:
+}
+
 }
